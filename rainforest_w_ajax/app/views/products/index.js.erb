@@ -1,5 +1,7 @@
-$('#products').html("<%= escape_javascript(render @products) %>");
+// $('#products').html("<%= escape_javascript(render @products) %>");
 
 // shorthand uses 'j' to escape_javascript
 // i.e. $('#products').html("<%= j(render @products) %>");
 
+$('#products').append('<%= j render(@products) %>');
+$('.pagination').replaceWith('<%= j paginate(@products) %>');

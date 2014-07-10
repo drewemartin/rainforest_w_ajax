@@ -6,8 +6,9 @@ class ProductsController < ApplicationController
       Product.order('products.created_at DESC').page(params[:page]).per(8)
     end
 
-    if request.xhr?
-      render @products
+    respond_to do |format|
+      format.js
+      format.html
     end
   end
 
